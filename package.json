@@ -1,0 +1,26 @@
+{
+  "name": "glide",
+  "version": "1.0.0",
+  "description": "Glide - share files nearby and over the internet",
+  "main": "main.js",
+  "author": "You",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.example.glide",
+    "productName": "Glide",
+    "files": ["main.js", "preload.js", "renderer/**/*", "server/signaling.js"],
+    "win": { "target": ["nsis", "portable"] },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+  }
+}
